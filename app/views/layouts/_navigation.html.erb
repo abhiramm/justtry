@@ -1,5 +1,5 @@
-<%= link_to "Custom", root_path, :class => 'brand' %>
-<ul class="nav">
+<%= image_tag '/assets/custom4u-logo.png' , :class => 'brand' %>
+<ul class="nav top-bar pull-right">
   <% if user_signed_in? %>
     <li>
     <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>
