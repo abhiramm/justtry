@@ -1,4 +1,12 @@
 <h3>Home</h3>
-<% @users.each do |user| %>
-  <p>User: <%=link_to user.name, user %></p>
-<% end %>
+<div class="row">
+        <div class="span8">
+            <%= image_tag "home-page-h1.png" %>
+            <div id="image_place">
+
+            </div>
+        </div>
+        <div class="span4">
+            <%= render 'form' %>
+        </div>
+</div>
