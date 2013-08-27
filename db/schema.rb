@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130827080206) do
+ActiveRecord::Schema.define(version: 20130827092140) do
 
   create_table "clip_categories", force: true do |t|
     t.string   "name"
@@ -154,9 +154,11 @@ ActiveRecord::Schema.define(version: 20130827080206) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "location_id"
   end
 
   add_index "white_labels", ["email"], name: "index_white_labels_on_email", unique: true
+  add_index "white_labels", ["location_id"], name: "index_white_labels_on_location_id"
   add_index "white_labels", ["reset_password_token"], name: "index_white_labels_on_reset_password_token", unique: true
 
 end
