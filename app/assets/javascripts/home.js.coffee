@@ -5,7 +5,8 @@ jQuery ->
   performer_delivery = ->
       performer = $('#order_performer_id :selected').text()
       options_performer = $(deliveries).filter("optgroup[label='#{performer}']").html()
-      console.log options_performer
+      select_option = '<option value="">Please select an option</option>\n'
+      options_performer = select_option + options_performer
       if options_performer
         $('#order_delivery_id').html(options_performer)
       else
@@ -14,7 +15,8 @@ jQuery ->
   performer_quality = ->
       performer = $('#order_performer_id :selected').text()
       options_performer = $(qualities).filter("optgroup[label='#{performer}']").html()
-      console.log options_performer
+      select_option = '<option value="">Please select an option</option>\n'
+      options_performer = select_option + options_performer
       if options_performer
         $('#order_quality_id').html(options_performer)
       else
@@ -23,7 +25,8 @@ jQuery ->
   performer_duration = ->
       performer = $('#order_performer_id :selected').text()
       options_performer = $(durations).filter("optgroup[label='#{performer}']").html()
-      console.log options_performer
+      select_option = '<option value="">Please select an option</option>\n'
+      options_performer = select_option + options_performer
       if options_performer
         $('#order_duration_id').html(options_performer)
       else
@@ -31,7 +34,10 @@ jQuery ->
 
   performer_category = ->
       performer = $('#order_performer_id :selected').text()
+      categoreee = $(categories).html()
       options_performer = $(categories).filter("optgroup[label='#{performer}']").html()
+      select_option = '<option value="">Please select an option</option>\n'
+      options_performer = select_option + options_performer
       console.log options_performer
       if options_performer
         $('#order_category_id').html(options_performer)
@@ -49,7 +55,8 @@ jQuery ->
     $('#order_location_id').change ->
       country = $('#order_location_id :selected').text()
       options = $(performers).filter("optgroup[label='#{country}']").html()
-      console.log options
+      select_option = '<option value="">Please select an option</option>\n'
+      options = select_option + options
       if options
         $('#order_performer_id').html(options)
         performer_change()
