@@ -1,4 +1,4 @@
-glass DeviseCreatePerformers < ActiveRecord::Migration
+class DeviseCreatePerformers < ActiveRecord::Migration
   def change
     create_table(:performers) do |t|
       ## Database authenticatable
