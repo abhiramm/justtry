@@ -82,7 +82,7 @@ namespace :sample_data do
 
   def create_performers
     w = WhiteLabel.first
-    perf = w.performers.build(name: 'Ella Jollie', email: 'ella@sdsk.com', password: 'ella1234', password_confirmation: 'ella1234', avatar: '/assets/ella.gif')
+    perf = w.performers.build(name: 'Ella Jollie', email: 'ella@sdsk.com', password: 'ella1234', password_confirmation: 'ella1234', avatar: 'ella.gif')
     perf.location = w.location
     if perf.save
       puts "The perf #{perf.inspect} is saved for #{w.name}"
@@ -92,7 +92,7 @@ namespace :sample_data do
       perf.delivery_times << DeliveryTime.limit(1)
     end
     w = WhiteLabel.last
-    perf = w.performers.build(name: 'Amylu Bennet', email: 'amylu@sdsk.com', password: 'ella1234', password_confirmation: 'ella1234', avatar: '/assets/amylu.gif')
+    perf = w.performers.build(name: 'Amylu Bennet', email: 'amylu@sdsk.com', password: 'ella1234', password_confirmation: 'ella1234', avatar: 'amylu.gif')
     perf.location = w.location
     if perf.save
       puts "The perf #{perf.inspect} is saved for #{w.name}"
@@ -102,7 +102,7 @@ namespace :sample_data do
       perf.delivery_times << DeliveryTime.limit(2)
     end
     w = WhiteLabel.first
-    perf = w.performers.build(name: 'Smoke Bennet', email: 'smoke@sdsk.com', password: 'ella1234', password_confirmation: 'ella1234', avatar: '/assets/smoke.gif')
+    perf = w.performers.build(name: 'Smoke Bennet', email: 'smoke@sdsk.com', password: 'ella1234', password_confirmation: 'ella1234', avatar: 'smoke.gif')
     perf.location = w.location
     if perf.save
       puts "The perf #{perf.inspect} is saved for #{w.name}"
