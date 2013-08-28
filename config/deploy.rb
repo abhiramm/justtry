@@ -14,7 +14,7 @@ set :use_sudo, false
 
 set :repository_cache, "cached_copy"
 set :scm, "git"
-set :repository, "git@bitbucket.org:vysakh0/custom.git"
+set :repository, "git@github.com:rahulan/gw-c4u.git"
 set :branch, "master"
 
 default_run_options[:pty] = true
