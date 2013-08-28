@@ -15,7 +15,7 @@ set :use_sudo, false
 set :repository_cache, "cached_copy"
 set :scm, "git"
 set :repository, "git@github.com:rahulan/gw-c4u.git"
-set :branch, "master"
+set :branch, "develop"
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
@@ -54,8 +54,8 @@ namespace :deploy do
 
 		desc "Make sure local git is in sync with remote."
 		task :check_revision, roles: :web do
-				unless `git rev-parse HEAD` == `git rev-parse origin/master`
-						puts "WARNING: HEAD is not the same as origin/master"
+				unless `git rev-parse HEAD` == `git rev-parse origin/develop`
+						puts "WARNING: HEAD is not the same as origin/develop"
 						puts "Run `git push` to sync changes."
 						exit
 				end
