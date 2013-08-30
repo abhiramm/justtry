@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @order.location.name %>
+</p>
+
+<p>
+  <strong>Performer:</strong>
+  <%= @order.performer.name %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @order.duration.time %>
+</p>
+
+<p>
+  <strong>Quality:</strong>
+  <%= @order.quality.name %>
+</p>
+
+<p>
+  <strong>Delivery:</strong>
+  <%= @order.delivery_time.duration %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @order.clip_category.name %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

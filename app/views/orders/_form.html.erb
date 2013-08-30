@@ -1,0 +1,50 @@
+
+<%= form_for(@order) do |f| %>
+<% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+      <ul>
+      <% @order.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :location_id %><br />
+    <%= f.collection_select :location_id, Location.all, :id, :name, prompt: true %>
+    <%= f.label :performer_id %><br />
+    <%= f.grouped_collection_select :performer_id, Location.order(:name), :performers, :name, :id, :name, include_blank: true %>
+    <%= f.label :clip_category_id %><br />
+    <%= f.grouped_collection_select :clip_category_id, Performer.order(:name), :clip_categories, :name, :id, :name, include_blank: true %>
+    <%= f.label :duration_id %><br />
+    <%= f.grouped_collection_select :duration_id, Performer.order(:name), :durations, :name, :id, :time, include_blank: true %>
+    <%= f.label :quality_id %><br />
+    <%= f.grouped_collection_select :quality_id, Performer.order(:name), :qualities, :name, :id, :name, include_blank: true %>
+    <%= f.label :delivery_time_id %><br />
+    <%= f.grouped_collection_select :delivery_time_id, Performer.order(:name), :delivery_times, :name, :id, :duration, include_blank: true %>
+   </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+<!--
+<%# simple_form_for(@order) do |f| %>
+<%# f.error_notification %>
+
+  <div class="form-inputs">
+    <%# f.input :location_id %>
+    <%# f.input :performer_id %>
+    <%# f.input :duration_id %>
+    <%# f.input :quality_id %>
+    <%# f.input :delivery_id %>
+    <%# f.input :category_id %>
+  </div>
+
+  <div class="form-actions">
+    <%# f.button :submit %>
+  </div>
+<%# end %>
+-->

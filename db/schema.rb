@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130827092140) do
+ActiveRecord::Schema.define(version: 20130830030354) do
 
   create_table "clip_categories", force: true do |t|
     t.string   "name"
@@ -66,6 +66,19 @@ ActiveRecord::Schema.define(version: 20130827092140) do
 
   add_index "durations", ["time"], name: "index_durations_on_time"
 
+  create_table "item_categories", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "item_category_performers", force: true do |t|
+    t.integer  "item_category_id"
+    t.integer  "performer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "locations", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -73,6 +86,17 @@ ActiveRecord::Schema.define(version: 20130827092140) do
   end
 
   add_index "locations", ["name"], name: "index_locations_on_name", unique: true
+
+  create_table "orders", force: true do |t|
+    t.integer  "location_id"
+    t.integer  "performer_id"
+    t.integer  "duration_id"
+    t.integer  "quality_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "delivery_time_id"
+    t.integer  "clip_category_id"
+  end
 
   create_table "performers", force: true do |t|
     t.string   "email",                  default: "", null: false

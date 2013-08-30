@@ -8,9 +8,9 @@ jQuery ->
       select_option = '<option value="">Please select an option</option>\n'
       options_performer = select_option + options_performer
       if options_performer
-        $('#order_delivery_id').html(options_performer)
+        $('#order_delivery_time_id').html(options_performer)
       else
-        $('#order_delivery_id').empty()
+        $('#order_delivery_time_id').empty()
 
   performer_quality = ->
       performer = $('#order_performer_id :selected').text()
@@ -40,9 +40,9 @@ jQuery ->
       options_performer = select_option + options_performer
       console.log options_performer
       if options_performer
-        $('#order_category_id').html(options_performer)
+        $('#order_clip_category_id').html(options_performer)
       else
-        $('#order_category_id').empty()
+        $('#order_clip_category_id').empty()
 
   performer_change = ->
     $("#home_form").submit()
@@ -66,10 +66,10 @@ jQuery ->
 
 
   performers = $('#order_performer_id').html()
-  categories = $('#order_category_id').html()
+  categories = $('#order_clip_category_id').html()
   durations  = $('#order_duration_id').html()
   qualities  = $('#order_quality_id').html()
-  deliveries = $('#order_delivery_id').html()
+  deliveries = $('#order_delivery_time_id').html()
 
   location_change()
 

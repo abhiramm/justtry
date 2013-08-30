@@ -1,3 +1,3 @@
 class Quality < ActiveRecord::Base
-  has_many :quality_performers
+  has_many :orders
 end

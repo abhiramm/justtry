@@ -14,4 +14,6 @@ class Performer < ActiveRecord::Base
   has_many :delivery_times, through: :delivery_time_performers
   has_many :quality_performers
   has_many :qualities, through: :quality_performers
+  has_many :item_category_performers
+  has_many :orders
 end
