@@ -69,6 +69,6 @@ class PerformersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def performer_params
-      params[:performer]
+      params.require(:performer).permit(:first_name, :white_label_id, :location_id, :avatar, :location, :photo_id, :profile_thumb, :profile_gif)
     end
 end

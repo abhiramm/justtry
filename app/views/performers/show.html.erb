@@ -1,4 +1,44 @@
 <p id="notice"><%= notice %></p>
 
+<p>
+  <strong>First name:</strong>
+  <%= @performer.first_name %>
+</p>
+
+<p>
+  <strong>White label:</strong>
+  <%= @performer.white_label_id %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @performer.location_id %>
+</p>
+
+<p>
+  <strong>Avatar:</strong>
+  <%= @performer.avatar %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @performer.location %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= @performer.photo_id %>
+</p>
+
+<p>
+  <strong>Profile thumb:</strong>
+  <%= @performer.profile_thumb %>
+</p>
+
+<p>
+  <strong>Profile gif:</strong>
+  <%= @performer.profile_gif %>
+</p>
+
 <%= link_to 'Edit', edit_performer_path(@performer) %> |
 <%= link_to 'Back', performers_path %>

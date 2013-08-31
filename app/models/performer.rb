@@ -1,9 +1,4 @@
 class Performer < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :token_authenticatable, :confirmable,
-  # :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
   belongs_to :location
   belongs_to :white_label
   has_many :clip_category_performers
@@ -16,4 +11,5 @@ class Performer < ActiveRecord::Base
   has_many :qualities, through: :quality_performers
   has_many :item_category_performers
   has_many :orders
+  belongs_to :user
 end

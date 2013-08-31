@@ -16,15 +16,15 @@
     <%= f.label :location_id %><br />
     <%= f.collection_select :location_id, Location.all, :id, :name, prompt: true %>
     <%= f.label :performer_id %><br />
-    <%= f.grouped_collection_select :performer_id, Location.order(:name), :performers, :name, :id, :name, include_blank: true %>
+    <%= f.grouped_collection_select :performer_id, Location.order(:name), :performers, :name, :id, :first_name, include_blank: true %>
     <%= f.label :clip_category_id %><br />
-    <%= f.grouped_collection_select :clip_category_id, Performer.order(:name), :clip_categories, :name, :id, :name, include_blank: true %>
+    <%= f.grouped_collection_select :clip_category_id, Performer.order(:first_name), :clip_categories, :first_name, :id, :name, include_blank: true %>
     <%= f.label :duration_id %><br />
-    <%= f.grouped_collection_select :duration_id, Performer.order(:name), :durations, :name, :id, :time, include_blank: true %>
+    <%= f.grouped_collection_select :duration_id, Performer.order(:first_name), :durations, :first_name, :id, :time, include_blank: true %>
     <%= f.label :quality_id %><br />
-    <%= f.grouped_collection_select :quality_id, Performer.order(:name), :qualities, :name, :id, :name, include_blank: true %>
+    <%= f.grouped_collection_select :quality_id, Performer.order(:first_name), :qualities, :first_name, :id, :name, include_blank: true %>
     <%= f.label :delivery_time_id %><br />
-    <%= f.grouped_collection_select :delivery_time_id, Performer.order(:name), :delivery_times, :name, :id, :duration, include_blank: true %>
+    <%= f.grouped_collection_select :delivery_time_id, Performer.order(:first_name), :delivery_times, :first_name, :id, :duration, include_blank: true %>
    </div>
   <div class="actions">
     <%= f.submit %>
