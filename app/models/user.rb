@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   devise  :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_one :performer
+  #attr_accessible :performer_attributes, :performer_id
   accepts_nested_attributes_for :performer
+  
   
 end

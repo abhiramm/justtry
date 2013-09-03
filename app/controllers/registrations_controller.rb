@@ -13,5 +13,7 @@ class RegistrationsController < Devise::RegistrationsController
    # performer_path(:id => current_user.performer)
   #end
   
+  
+  
 
 end

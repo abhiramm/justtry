@@ -10,6 +10,6 @@ class ApplicationController < ActionController::Base
   #def after_sign_in_path_for(resource)
     # performer_path(:id => current_user.performer)
   #end
-
+  
 
 end
