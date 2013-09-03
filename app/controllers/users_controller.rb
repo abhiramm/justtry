@@ -11,6 +11,8 @@ class UsersController < ApplicationController
   
   def update
     authorize! :update # @user, :message => 'Not authorized as an administrator.'
+    Rails.logger.info'**************************************** asjdflkajsdf;jasd;kjf;sadjf;'
+
     @user = User.find(params[:id])
     if @user.update_attributes(params[:user], :as => :admin)
       redirect_to users_path, :notice => "User updated."
