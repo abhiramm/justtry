@@ -7,9 +7,10 @@ class ApplicationController < ActionController::Base
     redirect_to root_path, :alert => exception.message
   end
   
-  #def after_sign_in_path_for(resource)
-    # performer_path(:id => current_user.performer)
-  #end
-
+  def after_sign_in_path_for(resource)
+     #performer_path(:id => current_user.performer)
+     performers_path
+  end
+  
 
 end

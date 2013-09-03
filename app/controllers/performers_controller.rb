@@ -69,7 +69,7 @@ class PerformersController < ApplicationController
     end
   end
  def performer_params
-      params.require(:performer).permit(:first_name, :white_label_id, :location_id, :avatar, :location, :photo_id, :profile_thumb, :profile_gif)
+      params.require(:performer).permit(:first_name, :white_label_id, :location_id, :avatar, :location, :photo_id, :profile_thumb, :profile_gif, :user_id)
     end
 
   private

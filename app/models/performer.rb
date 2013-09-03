@@ -12,4 +12,5 @@ class Performer < ActiveRecord::Base
   has_many :item_category_performers
   has_many :orders
   belongs_to :user
+  #attr_accessible :user_id
 end
