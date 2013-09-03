@@ -23,7 +23,7 @@ describe PerformersController do
   # This should return the minimal set of attributes required to create a valid
   # Performer. As you add validations to Performer, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { {  } }
+  let(:valid_attributes) { { "first_name" => "MyString" } }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -85,14 +85,14 @@ describe PerformersController do
       it "assigns a newly created but unsaved performer as @performer" do
         # Trigger the behavior that occurs when invalid params are submitted
         Performer.any_instance.stub(:save).and_return(false)
-        post :create, {:performer => {  }}, valid_session
+        post :create, {:performer => { "first_name" => "invalid value" }}, valid_session
         assigns(:performer).should be_a_new(Performer)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Performer.any_instance.stub(:save).and_return(false)
-        post :create, {:performer => {  }}, valid_session
+        post :create, {:performer => { "first_name" => "invalid value" }}, valid_session
         response.should render_template("new")
       end
     end
@@ -106,8 +106,8 @@ describe PerformersController do
         # specifies that the Performer created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        Performer.any_instance.should_receive(:update).with({ "these" => "params" })
-        put :update, {:id => performer.to_param, :performer => { "these" => "params" }}, valid_session
+        Performer.any_instance.should_receive(:update).with({ "first_name" => "MyString" })
+        put :update, {:id => performer.to_param, :performer => { "first_name" => "MyString" }}, valid_session
       end
 
       it "assigns the requested performer as @performer" do
@@ -128,7 +128,7 @@ describe PerformersController do
         performer = Performer.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Performer.any_instance.stub(:save).and_return(false)
-        put :update, {:id => performer.to_param, :performer => {  }}, valid_session
+        put :update, {:id => performer.to_param, :performer => { "first_name" => "invalid value" }}, valid_session
         assigns(:performer).should eq(performer)
       end
 
@@ -136,7 +136,7 @@ describe PerformersController do
         performer = Performer.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Performer.any_instance.stub(:save).and_return(false)
-        put :update, {:id => performer.to_param, :performer => {  }}, valid_session
+        put :update, {:id => performer.to_param, :performer => { "first_name" => "invalid value" }}, valid_session
         response.should render_template("edit")
       end
     end

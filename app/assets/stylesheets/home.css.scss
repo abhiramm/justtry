@@ -1,3 +1,15 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.ms-selection
+{
+  padding-top: 17px !important;
+}
+
+body
+{
+  background-image:url(body-bg.jpg);
+  color:#dad8d8 !important;
+  background-size:100%;
+}

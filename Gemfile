@@ -13,6 +13,7 @@ gem 'devise'
 gem 'devise_invitable'
 gem 'figaro'
 gem 'rolify'
+gem "multi-select-rails"
 gem 'simple_form', '>= 3.0.0.rc'
 group :development do
   gem 'better_errors'

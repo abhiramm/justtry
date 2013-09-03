@@ -1,30 +1,38 @@
 class PerformersController < ApplicationController
-  before_action :set_performer, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_performer, only: [:show, :edit, :update, :destroy, :price]
+  before_filter :authenticate_user!
   # GET /performers
   # GET /performers.json
   def index
     @performers = Performer.all
   end
-
+  
   # GET /performers/1
   # GET /performers/1.json
   def show
+
   end
 
   # GET /performers/new
   def new
-    @performer = Performer.new
+    @performer = current_user.build_performer(params[:performer])
   end
 
   # GET /performers/1/edit
   def edit
   end
+  
+  def update_amount
+    @ccp = ClipCategoryPerformer.create(:clip_category_id => params[:category], :performer_id => current_user.id, :amount => params[:amount].to_f)
+    respond_to do |format|
+      format.js { @ccp }
+    end
+  end
 
   # POST /performers
   # POST /performers.json
   def create
-    @performer = Performer.new(performer_params)
+    @performer = current_user.build_performer(performer_params)
 
     respond_to do |format|
       if @performer.save
@@ -60,6 +68,9 @@ class PerformersController < ApplicationController
       format.json { head :no_content }
     end
   end
+ def performer_params
+      params.require(:performer).permit(:first_name, :white_label_id, :location_id, :avatar, :location, :photo_id, :profile_thumb, :profile_gif)
+    end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -68,7 +79,9 @@ class PerformersController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def performer_params
-      params.require(:performer).permit(:first_name, :white_label_id, :location_id, :avatar, :location, :photo_id, :profile_thumb, :profile_gif)
+    
+    def price
+      
     end
+  
 end

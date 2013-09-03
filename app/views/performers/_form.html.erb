@@ -6,7 +6,9 @@
     <%= f.input :white_label_id %>
     <%= f.input :location_id %>
     <%= f.input :avatar %>
-    <%= f.input :location %>
+    <%# f.input :location %>
+    <%= f.label "Categories" %>
+    <%= f.association :clip_categories, :label => "Categories", :wrapper_html => { :id => "categories_multiselect", :multiselect => true }%>
     <%= f.input :photo_id %>
     <%= f.input :profile_thumb %>
     <%= f.input :profile_gif %>

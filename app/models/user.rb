@@ -1,10 +1,11 @@
 class User < ActiveRecord::Base
   rolify
   # Include default devise modules. Others available are:
-  # :token_authenticatable, :confirmable,
+  # :token_authenticatable, :confirmable,:invitable
   # :lockable, :timeoutable and :omniauthable
-  devise :invitable, :database_authenticatable, :registerable, :confirmable,
+  devise  :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_one :performer
+  accepts_nested_attributes_for :performer
   
 end

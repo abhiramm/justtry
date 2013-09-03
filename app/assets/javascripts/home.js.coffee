@@ -45,7 +45,7 @@ jQuery ->
         $('#order_clip_category_id').empty()
 
   performer_change = ->
-    $("#home_form").submit()
+    $("#order_form").submit()
     performer_category()
     performer_duration()
     performer_quality()
