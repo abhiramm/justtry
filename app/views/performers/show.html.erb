@@ -17,7 +17,8 @@
 
 <p>
   <strong>Avatar:</strong>
-  <%= @performer.avatar %>
+<%= image_tag @performer.avatar_url(:thumb) if @performer.avatar? %>
+
 </p>
 
 <p>
@@ -27,17 +28,16 @@
 
 <p>
   <strong>Photo:</strong>
-  <%= @performer.photo_id %>
-</p>
+<%= image_tag @performer.photo_id_url(:thumb) if @performer.photo_id? %></p>
 
 <p>
   <strong>Profile thumb:</strong>
-  <%= @performer.profile_thumb %>
+  <%= image_tag @performer.profile_thumb_url(:thumb) if @performer.profile_thumb? %>
 </p>
 
 <p>
   <strong>Profile gif:</strong>
-  <%= @performer.profile_gif %>
+  <%= image_tag @performer.profile_gif_url(:thumb) if @performer.profile_gif? %>
 </p>
 
 <% @performer.clip_categories.each do |category| %>
