@@ -12,6 +12,8 @@ class UsersController < ApplicationController
   
   def update
     authorize! :update # @user, :message => 'Not authorized as an administrator.'
+    Rails.logger.info'**************************************** asjdflkajsdf;jasd;kjf;sadjf;'
+
     @user = User.find(params[:id])
     if @user.update_attributes(params[:user], :as => :admin)
       redirect_to users_path, :notice => "User updated."
@@ -30,7 +32,8 @@ class UsersController < ApplicationController
       redirect_to users_path, :notice => "Can't delete yourself."
     end
   end
-  def performer_params
-      params.require(:user).permit(:performer_attributes)
-    end
+  def update_sanitized_params
+    devise_parameter_sanitizer.for(:sign_up) {|u| u.permit(:name, :email, :password)}
+  end
+ 
 end

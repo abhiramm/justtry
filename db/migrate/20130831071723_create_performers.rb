@@ -10,7 +10,7 @@ class CreatePerformers < ActiveRecord::Migration
       t.string :profile_thumb
       t.string :profile_gif
 
-      t.timestamps
+      t.timestamps  
     end
   end
 end
