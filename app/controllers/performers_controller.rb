@@ -1,6 +1,6 @@
 class PerformersController < ApplicationController
  # layout "admin"
-  before_action :set_performer, only: [:show, :edit, :update, :destroy, :price]
+  before_action :set_performer, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!
   # GET /performers
   # GET /performers.json
@@ -74,6 +74,10 @@ class PerformersController < ApplicationController
    params.require(:performer).permit(:first_name, :white_label_id, :location_id, :avatar, :location, :photo_id, :profile_thumb, :profile_gif, :amount)
  end
 
+    def price
+      
+    end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_performer
@@ -82,8 +86,5 @@ class PerformersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     
-    def price
-      
-    end
   
 end
