@@ -10,7 +10,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'bootstrap-sass'
 gem 'cancan'
 gem "rmagick"
-gem 'protected_attributes'
+#gem 'protected_attributes'
 gem "carrierwave"
 gem 'devise'
 gem 'devise_invitable'
