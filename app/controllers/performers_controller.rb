@@ -1,5 +1,5 @@
 class PerformersController < ApplicationController
-  layout "admin"
+ # layout "admin"
   before_action :set_performer, only: [:show, :edit, :update, :destroy, :price]
   before_filter :authenticate_user!
   # GET /performers
