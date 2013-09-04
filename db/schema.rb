@@ -11,10 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130903130708) do
+ActiveRecord::Schema.define(version: 20130903140746) do
 
   create_table "clip_categories", force: true do |t|
     t.string   "name"
+    t.integer  "price"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -29,6 +30,12 @@ ActiveRecord::Schema.define(version: 20130903130708) do
 
   add_index "clip_category_performers", ["clip_category_id"], name: "index_clip_category_performers_on_clip_category_id"
   add_index "clip_category_performers", ["performer_id"], name: "index_clip_category_performers_on_performer_id"
+
+  create_table "custom_videos", force: true do |t|
+    t.string   "path"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "delivery_time_performers", force: true do |t|
     t.integer  "delivery_time_id"
@@ -60,7 +67,6 @@ ActiveRecord::Schema.define(version: 20130903130708) do
 
   create_table "durations", force: true do |t|
     t.string   "time"
-    t.integer  "price"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -96,7 +102,7 @@ ActiveRecord::Schema.define(version: 20130903130708) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "delivery_time_id"
-    t.integer  "clip_category_id" 
+    t.integer  "clip_category_id"
     t.integer  "total"
     t.integer  "custom_video_id"
   end
