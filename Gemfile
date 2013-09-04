@@ -9,9 +9,13 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'bootstrap-sass'
 gem 'cancan'
+gem "rmagick"
+#gem 'protected_attributes'
+gem "carrierwave"
 gem 'devise'
 gem 'devise_invitable'
 gem 'figaro'
+gem 'carrierwave-video'
 gem 'rolify'
 gem "multi-select-rails"
 gem 'simple_form', '>= 3.0.0.rc'

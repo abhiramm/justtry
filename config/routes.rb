@@ -1,4 +1,6 @@
 Custom::Application.routes.draw do
+  resources :custom_videos
+
   resources :performers
 
   resources :orders

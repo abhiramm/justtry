@@ -12,4 +12,9 @@ class Performer < ActiveRecord::Base
   has_many :item_category_performers
   has_many :orders
   belongs_to :user
+  
+    mount_uploader :avatar, AvatarUploader
+    mount_uploader :profile_gif, AvatarUploader
+    mount_uploader :profile_thumb, AvatarUploader
+    mount_uploader :photo_id, AvatarUploader
 end

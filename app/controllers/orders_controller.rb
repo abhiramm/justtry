@@ -70,7 +70,7 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:location_id, :performer_id, :duration_id, :quality_id, :delivery_time_id, :clip_category_id)
+     params.require(:order).permit(:location_id, :performer_id, :duration_id, :quality_id, :delivery_time_id, :clip_category_id)
     end
   def get_image
     @performer = Performer.find(params[:order][:performer_id]) unless params[:order][:performer_id].blank?

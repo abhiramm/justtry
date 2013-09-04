@@ -9,10 +9,10 @@
   <%= f.input :password_confirmation, :required => false %>
   <%= f.input :current_password, :hint => "we need your current password to confirm your changes", :required => true %>
   <% @user.build_performer  unless @user.performer %>
-  <%= f.fields_for :peformer, @user.performer do |per| %>
+  <%= f.fields_for :performer, @user.performer do |per| %>
       <%= per.input :first_name %>
-      <%= per.input :white_label_id %>
-      <%= per.input :location_id %>
+      <%# per.input :white_label_id %>
+      <%# per.input :location_id %>
       <%= per.input :avatar %>
       <%# f.input :location %>
       <%= per.label "Categories" %>

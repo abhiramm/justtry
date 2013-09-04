@@ -1,0 +1,27 @@
+<h1>Listing custom_videos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Path</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @custom_videos.each do |custom_video| %>
+      <tr>
+        <td><%= custom_video.path %></td>
+        <td><%= link_to 'Show', custom_video %></td>
+        <td><%= link_to 'Edit', edit_custom_video_path(custom_video) %></td>
+        <td><%= link_to 'Destroy', custom_video, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Custom video', new_custom_video_path %>

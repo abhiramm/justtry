@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
+   before_filter :configure_permitted_parameters, if: :devise_controller?
   protect_from_forgery with: :exception
   layout :layout_by_resource
 
@@ -11,6 +12,7 @@ class ApplicationController < ActionController::Base
   #def after_sign_in_path_for(resource)
     # performer_path(:id => current_user.performer)
   #end
+<<<<<<< HEAD
   def layout_by_resource
     if user_signed_in?
       "admin"
@@ -18,5 +20,18 @@ class ApplicationController < ActionController::Base
       "application"
     end
   end
+=======
 
+ 
+  protected
+ 
+  # my custom fields are :name, :heard_how
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:account_update) do |u|
+      u.permit(:name, :email, :password, :password_confirmation, :current_password, :performer_attributes => [:first_name, :avatar, :photo_id, :profile_thumb, :profile_gif, :photo_id, :avatar, :id, :clip_category_performers_attributes => [:id, :clip_category_ids]])
+    end
+        Rails.logger.info'****************************************'
+>>>>>>> a8f0f25eb702e5e355d25aaaa40645b222fa6610
+
+  end
 end

@@ -5,5 +5,6 @@ class Order < ActiveRecord::Base
   belongs_to :location
   belongs_to :quality
   belongs_to :clip_category
+  has_many :custom_video
   
 end
