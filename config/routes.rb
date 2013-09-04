@@ -10,4 +10,5 @@ Custom::Application.routes.draw do
   resources :users
   match 'get_image', to: 'home#get_image', via: [:get, :post]
   match "performers/update_amount", to: 'performers#update_amount', via: [:get, :post]
+  
 end
