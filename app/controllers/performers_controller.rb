@@ -69,8 +69,8 @@ class PerformersController < ApplicationController
     end
   end
  def performer_params
-      params.require(:performer).permit(:first_name, :white_label_id, :location_id, :avatar, :location, :photo_id, :profile_thumb, :profile_gif, :user_id)
-    end
+     params.require(:performer).permit(:first_name, :white_label_id, :location_id, :avatar, :location, :photo_id, :profile_thumb, :profile_gif, :amount, :clip_category_ids, :clip_categories_attributes [:id, :name, :price])
+ end
 
   private
     # Use callbacks to share common setup or constraints between actions.

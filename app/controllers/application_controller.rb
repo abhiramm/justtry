@@ -18,8 +18,7 @@ class ApplicationController < ActionController::Base
   # my custom fields are :name, :heard_how
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:account_update) do |u|
-      u.permit(:name, :email, :password, :password_confirmation, :current_password,
-        :performer_attributes => [ :first_name, :avatar, :photo_id, :profile_thumb, :profile_gif, :photo_id, :clip_categories, :avatar])
+      u.permit(:name, :email, :password, :password_confirmation, :current_password, :performer_attributes => [:first_name, :avatar, :photo_id, :profile_thumb, :profile_gif, :photo_id, :avatar, :id, :clip_category_performers_attributes => [:id, :clip_category_ids]])
     end
         Rails.logger.info'****************************************'
 

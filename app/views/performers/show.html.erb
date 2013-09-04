@@ -40,6 +40,7 @@
   <%= image_tag @performer.profile_gif_url(:thumb) if @performer.profile_gif? %>
 </p>
 
+
 <% @performer.clip_categories.each do |category| %>
   <div class="clean">
   <%= form_tag "update_amount", :remote => :true do %>
