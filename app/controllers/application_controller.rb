@@ -12,11 +12,12 @@ class ApplicationController < ActionController::Base
   #def after_sign_in_path_for(resource)
     # performer_path(:id => current_user.performer)
   #end
+
   def layout_by_resource
     if user_signed_in?
-      #"admin"
-    #else
-      "application"
+   #   "admin"
+  #else
+     "application"
     end
   end
 

@@ -1,6 +1,6 @@
 class PerformersController < ApplicationController
-  #layout "admin"
-  before_action :set_performer, only: [:show, :edit, :update, :destroy, :price]
+ # layout "admin"
+  before_action :set_performer, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!
   # GET /performers
   # GET /performers.json
@@ -11,6 +11,7 @@ class PerformersController < ApplicationController
   # GET /performers/1
   # GET /performers/1.json
   def show
+
   end
 
   # GET /performers/new
@@ -69,7 +70,12 @@ class PerformersController < ApplicationController
     end
   end
  def performer_params
-      params.require(:performer).permit(:first_name, :white_label_id, :location_id, :avatar, :location, :photo_id, :profile_thumb, :profile_gif)
+#  params.require(:performer).permit(:first_name, :white_label_id, :location_id, :avatar, :location, :photo_id, :profile_thumb, :profile_gif, :amount, :clip_category_performers_attributes => [:id, :clip_category_ids, :performer_ids, :amount], :clip_categories_attributes => [:id, :name, :amount])
+   params.require(:performer).permit(:first_name, :white_label_id, :location_id, :avatar, :location, :photo_id, :profile_thumb, :profile_gif, :amount)
+ end
+
+    def price
+      
     end
 
   private
