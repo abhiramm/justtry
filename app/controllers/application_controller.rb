@@ -12,15 +12,14 @@ class ApplicationController < ActionController::Base
   #def after_sign_in_path_for(resource)
     # performer_path(:id => current_user.performer)
   #end
-<<<<<<< HEAD
   def layout_by_resource
     if user_signed_in?
-      "admin"
-    else
+      #"admin"
+    #else
       "application"
     end
   end
-=======
+
 
  
   protected
@@ -31,7 +30,6 @@ class ApplicationController < ActionController::Base
       u.permit(:name, :email, :password, :password_confirmation, :current_password, :performer_attributes => [:first_name, :avatar, :photo_id, :profile_thumb, :profile_gif, :photo_id, :avatar, :id, :clip_category_performers_attributes => [:id, :clip_category_ids]])
     end
         Rails.logger.info'****************************************'
->>>>>>> a8f0f25eb702e5e355d25aaaa40645b222fa6610
 
   end
 end

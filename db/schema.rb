@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130903140746) do
+ActiveRecord::Schema.define(version: 20130904070122) do
 
   create_table "clip_categories", force: true do |t|
     t.string   "name"
@@ -105,6 +105,7 @@ ActiveRecord::Schema.define(version: 20130903140746) do
     t.integer  "clip_category_id"
     t.integer  "total"
     t.integer  "custom_video_id"
+    t.string   "email"
   end
 
   create_table "performers", force: true do |t|

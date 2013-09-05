@@ -1,34 +1,32 @@
 <p id="notice"><%= notice %></p>
+<table id="order_table">
+  <thead>
+    <tr id="order_table_tr">
+      <th>Location</th>
+      <th>Performer</th>
+      <th>Duration</th>
+      <th>Quality</th>
+      <th>Delivery</th>
+      <th>Category</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
 
-<p>
-  <strong>Location:</strong>
-  <%= @order.location.name %>
-</p>
-
-<p>
-  <strong>Performer:</strong>
-  <%= @order.performer.first_name %>
-</p>
-
-<p>
-  <strong>Duration:</strong>
-  <%= @order.duration.time %>
-</p>
-
-<p>
-  <strong>Quality:</strong>
-  <%= @order.quality.name %>
-</p>
-
-<p>
-  <strong>Delivery:</strong>
-  <%= @order.delivery_time.duration %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @order.clip_category.name %>
-</p>
-
+  <tbody>
+      <tr>
+        <td><%= @order.location.name %></td>
+        <td><%= @order.performer.first_name %></td>
+        <td><%= @order.duration.time %></td>
+        <td><%= @order.quality.name %></td>
+        <td><%= @order.delivery_time.duration %></td>
+        <td><%= @order.clip_category.name %></td>
+        <td><%= render 'form_video'%></td>
+        <td></td>
+      </tr>
+  </tbody>
+</table>
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>
+<p>        <%= render 'form_order' %>
+</p>
