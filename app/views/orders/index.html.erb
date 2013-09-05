@@ -17,13 +17,14 @@
 
   <tbody>
     <% @orders.each do |order| %>
-     <tr>
+       <tr>
         <td><%= order.location.name %></td>
         <td><%= order.performer.first_name %></td>
         <td><%= order.duration.time %></td>
         <td><%= order.quality.name %></td>
         <td><%= order.delivery_time.duration %></td>
         <td><%= order.clip_category.name %></td>
+        <td><%= render 'form_video'%></td>
         <td><%= link_to 'Show', order %></td>
         <td><%= link_to 'Edit', edit_order_path(order) %></td>
         <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
