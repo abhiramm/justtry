@@ -1,0 +1,7 @@
+<%= simple_form_for(@custom_video) do |f| %>
+  <%= f.error_notification %>
+
+    <%= f.file_field :path %>
+
+    <%= f.button :submit %>
+  <% end %>

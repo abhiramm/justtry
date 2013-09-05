@@ -1,3 +1,13 @@
 // Place all the styles related to the orders controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#order_table
+{
+  background-color:white;
+  color:black;
+  padding: 5px 12px 4px 7px;
+}
+#order_table_tr
+{
+  border:1px solid grey;
+}

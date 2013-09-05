@@ -31,5 +31,6 @@ class ApplicationController < ActionController::Base
       u.permit(:name, :email, :password, :password_confirmation, :current_password, :performer_attributes => [:first_name, :avatar, :photo_id, :profile_thumb, :profile_gif, :photo_id, :avatar, :id, :clip_category_performers_attributes => [:id, :clip_category_ids]])
     end
         Rails.logger.info'****************************************'
+
   end
 end
